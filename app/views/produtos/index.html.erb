@@ -9,24 +9,11 @@
     <tr>
       <th scope="col">Nome</th>
       <th scope="col">Descrição</th>
-      <th scope="col">Quantidade</th>
       <th scope="col">Preço</th>
     </tr>
   </thead>
   <tbody>
-    <% @produtosByNome.each do |produto| %>
-    <tr>
-      <td scope="row"><%= produto.nome %></td>
-      <td scope="row"><%= produto.descricao %></td>
-      <td scope="row"><%= produto.quantidade %></td>
-      <td scope="row"><%= produto.preco %></td>
-      <td scope="row">
-        <%= button_to "Remover", produto, method: :delete,
-                      class: "btn btn-danger",
-                      data: { confirm: "Tem certeza que deseja apagar o produto #{produto.nome}?" } %>
-      </td>
-    </tr>
-    <% end %>
+    <%= render @produtosByNome %>
   </tbody>
 </table>
 
@@ -35,19 +22,11 @@
     <tr>
       <th>Nome</th>
       <th>Descrição</th>
-      <th>Quantidade</th>
       <th>Preço</th>
     </tr>
   </thead>
   <tbody>
-    <% @produtosByPreco.each do |produto| %>
-    <tr>
-      <td><%= produto.nome %></td>
-      <td><%= produto.descricao %></td>
-      <td><%= produto.quantidade %></td>
-      <td><%= produto.preco %></td>
-    </tr>
-    <% end %>
+    <%= render @produtosByPreco %>
   </tbody>
 </table>
 

@@ -1,0 +1,13 @@
+<tr>
+  <td scope="row"><%= produto.nome %></td>
+  <td scope="row"><%= produto.descricao %></td>
+  <td scope="row"><%= produto.preco %></td>
+  <td scope="row">
+    <%= button_to "Remover", produto, method: :delete,
+                  class: "btn btn-danger",
+                  data: { confirm: "Tem certeza que deseja apagar o produto #{produto.nome}?" } %>
+  </td>
+  <td>
+    <%= link_to "Editar", edit_produto_path(produto), class: "btn btn-primary" %>
+  </td>
+</tr>
